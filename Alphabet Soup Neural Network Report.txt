@@ -1,0 +1,33 @@
+Alphabet Soup Neural Network Report
+
+
+Overview of the analysis: Taking data from Alphabet Soup, we attempted to use a neural network to predict the likelihood of a particular organization being successful in accomplishing their goals if they were given funding.
+
+Results: 
+
+Data Preprocessing
+
+* our target variable was IS_SUCCESSFUl, a simple yes/no on the success of the org in question.
+
+* all other columns in the data provide were used as features, save 'EIN' and 'NAME, as they are neither targets nor features.
+
+Compiling, Training, and Evaluating the Model
+
+
+* The initial attempt was constructed with 2 hidden layers (3 layers total), using the "relu" activation function for the hidden layers and a sigmoid function for the output layer. 80 neurons in the first layer, 30 in the second. 
+
+* We were not able to make our target of 75% accuracy. This model was only able to achieve 73% (0.729).
+
+* To attempt to improve accuracy, we built a modeling function using keras tuner to evaluate different activation functions, number of layers, number of neurons, etc. essentially, using machine learning to learn what the best model might be.
+
+After 60 trials, we only achieved a marginal increase in accuracy to 73.5% (0.735).
+
+Summary: Overall, while the accuracy of our models is at least better than a coin flip, we'd want to do better. While time doesn't permit us to do so, we could try a few different approaches:
+
+* taking another look at the raw data to see if reducing the number of columns might improve accuracy.
+
+* better defining what "success" actually means, possibly binning the data to accomplish this
+
+* using ensemble learning techniques such as RandomForest to aggregate predictions.
+
+* finally, getting more data never hurts, assuming it's available.
